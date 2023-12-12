@@ -2,7 +2,8 @@ const pg = require('pg')
 require('dotenv').config()
 
 const pool = new pg.Pool({
-    connectionString: process.env.URL_DATA
+    connectionString: process.env.URL_DATA,
+    ssl: true
 })
 
 pool.connect((err, client, release) => {
