@@ -32,9 +32,17 @@ const pool = require('../db/posgress')
 const getDgi = async (req,res)=>{
     try {
        const rnc =  req.params.rnc
-       const result = await pool.query(`select * from dgi WHERE RNC = '${rnc}'`)
-       res.json(result.rows)
+       
+       if(Object.keys(req.params).length === 0){
+        return res.json([])
+       }
 
+       if(!rnc){
+        return res.json([])
+       }
+    
+       const result = await pool.query(`select * from dgi WHERE RNC = '${rnc}'`)
+       return res.json(result.rows)
         // insertarDatosDesdeArchivo(archivo)
        
        
