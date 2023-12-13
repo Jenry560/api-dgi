@@ -32,7 +32,7 @@ const pool = require('../db/posgress')
 const getDgi = async (req,res)=>{
     try {
        const rnc =  req.params.rnc
-       
+  
        if(Object.keys(req.params).length === 0){
         return res.json([])
        }
