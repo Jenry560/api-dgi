@@ -13,7 +13,7 @@ require('dotenv').config()
 
 // app.get('/dgi/:rnc',controllers.getDgi)
 
-app.get('/dgi',(req,res)=>{
+app.get('/',(req,res)=>{
     res.json([])
 })
 
