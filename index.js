@@ -20,8 +20,8 @@ app.get('/dgi/',(req,res)=>{
 
 
 
-PORT = 4000
+PORT = process.env.PORT || 4000
 
-app.listen(PORT,()=>{
+app.listen(PORT,"0.0.0.0",()=>{
     console.log(`server on port ${PORT}`)
 })
